@@ -1,0 +1,217 @@
+[ 2016-09-15T19:09:31+08:00 ] 127.0.0.1 /Emgr/addemail.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.003001s ]
+INFO: [ route_check ] --END-- [ RunTime:0.027002s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.252014s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.252014s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.017001s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.003000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.027002s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.004000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2016-09-15T19:09:36+08:00 ] 127.0.0.1 /Schmgr/add_ghost.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.028002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028002s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-15T19:09:44+08:00 ] 127.0.0.1 /Schmgr/add_ghost.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: 建议使用I方法替代_post
+SQL: insert into googlelist(sites) values('http://guge1.hntvchina.com') [ RunTime:0.013000s ]
+ERR: 1062:Duplicate entry 'http://guge1.hntvchina.com' for key 'sites'
+ [ SQL语句 ] : insert into googlelist(sites) values('http://guge1.hntvchina.com')
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='http://guge1.hntvchina.com' [ RunTime:0.011001s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('http://fcczp5.jsylhs.com') [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='http://fcczp5.jsylhs.com' [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('https://g.linuxeye.com') [ RunTime:0.002000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='https://g.linuxeye.com' [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('https://julianhuang.cc') [ RunTime:0.001001s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='https://julianhuang.cc' [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('http://guge.suanfazu.com') [ RunTime:0.001000s ]
+ERR: 1062:Duplicate entry 'http://guge.suanfazu.com' for key 'sites'
+ [ SQL语句 ] : insert into googlelist(sites) values('http://guge.suanfazu.com')
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='http://guge.suanfazu.com' [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('https://g.namaho.com') [ RunTime:0.001000s ]
+ERR: 1062:Duplicate entry 'https://g.namaho.com' for key 'sites'
+ [ SQL语句 ] : insert into googlelist(sites) values('https://g.namaho.com')
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='https://g.namaho.com' [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('https://www.ytso.cc') [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='https://www.ytso.cc' [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('https://g.chenjx.cn') [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='https://g.chenjx.cn' [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('http://www.y645.com') [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='http://www.y645.com' [ RunTime:0.002001s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('http://www.51google.pw') [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='http://www.51google.pw' [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('https://g.sxisa.org') [ RunTime:0.001000s ]
+ERR: 1062:Duplicate entry 'https://g.sxisa.org' for key 'sites'
+ [ SQL语句 ] : insert into googlelist(sites) values('https://g.sxisa.org')
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='https://g.sxisa.org' [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('https://g.chenjx.cn') [ RunTime:0.002000s ]
+ERR: 1062:Duplicate entry 'https://g.chenjx.cn' for key 'sites'
+ [ SQL语句 ] : insert into googlelist(sites) values('https://g.chenjx.cn')
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='https://g.chenjx.cn' [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('http://www.qwspq.com') [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='http://www.qwspq.com' [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('https://g.jikewenku.cn') [ RunTime:0.001000s ]
+ERR: 1062:Duplicate entry 'https://g.jikewenku.cn' for key 'sites'
+ [ SQL语句 ] : insert into googlelist(sites) values('https://g.jikewenku.cn')
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='https://g.jikewenku.cn' [ RunTime:0.000000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('https://g.sxisa.org') [ RunTime:0.000000s ]
+ERR: 1062:Duplicate entry 'https://g.sxisa.org' for key 'sites'
+ [ SQL语句 ] : insert into googlelist(sites) values('https://g.sxisa.org')
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='https://g.sxisa.org' [ RunTime:0.000000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('http://guge1.hntvchina.com') [ RunTime:0.000000s ]
+ERR: 1062:Duplicate entry 'http://guge1.hntvchina.com' for key 'sites'
+ [ SQL语句 ] : insert into googlelist(sites) values('http://guge1.hntvchina.com')
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='http://guge1.hntvchina.com' [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('http://www.ose.cc') [ RunTime:0.001000s ]
+ERR: 1062:Duplicate entry 'http://www.ose.cc' for key 'sites'
+ [ SQL语句 ] : insert into googlelist(sites) values('http://www.ose.cc')
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='http://www.ose.cc' [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('http://www.gfsousou.cn') [ RunTime:0.001000s ]
+ERR: 1062:Duplicate entry 'http://www.gfsousou.cn' for key 'sites'
+ [ SQL语句 ] : insert into googlelist(sites) values('http://www.gfsousou.cn')
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='http://www.gfsousou.cn' [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('http://jiuweisoso.wallpai.com') [ RunTime:0.001000s ]
+ERR: 1062:Duplicate entry 'http://jiuweisoso.wallpai.com' for key 'sites'
+ [ SQL语句 ] : insert into googlelist(sites) values('http://jiuweisoso.wallpai.com')
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='http://jiuweisoso.wallpai.com' [ RunTime:0.000000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('http://www.jiuminghu.com') [ RunTime:0.000000s ]
+ERR: 1062:Duplicate entry 'http://www.jiuminghu.com' for key 'sites'
+ [ SQL语句 ] : insert into googlelist(sites) values('http://www.jiuminghu.com')
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='http://www.jiuminghu.com' [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: insert into googlelist(sites) values('http://0s.o53xo.m5xw6z3mmuxgizi.erenta.ru') [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: update googlelist set succeed_count=succeed_count+1, fail_count=0 where sites='http://0s.o53xo.m5xw6z3mmuxgizi.erenta.ru' [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given E:\destop\source_code\nedm\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+
+[ 2016-09-15T19:10:01+08:00 ] 127.0.0.1 /Emgr/addemail.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-09-15T19:10:04+08:00 ] 127.0.0.1 /Schmgr/uglist.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `googlelist` [ RunTime:0.022002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `googlelist` WHERE ( succeed_count>0 and fail_count<19 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `googlelist` WHERE ( succeed_count>0 and fail_count<19 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002001s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002001s ]
+

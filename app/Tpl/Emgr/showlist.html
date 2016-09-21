@@ -1,0 +1,18 @@
+
+<include file="Common:nav" />
+
+
+
+<div class="addemail">
+<table>
+<tbody>
+<tr><td>序号</td> <td>邮箱</td></tr>
+<volist name="list" id="vo">
+<tr> <td> {$vo.id} </td> <td> {$vo.email} </td></tr>
+</volist>
+</tbody>
+</table>
+<p> {$show}</p>
+</div>
+</body>
+</html>

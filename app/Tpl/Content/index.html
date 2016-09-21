@@ -1,0 +1,46 @@
+<include file="Common:nav" />
+
+
+<table class="mailcontent">
+<form action="add.html" method="post" onSubmit="geteditor()">
+<tbody>
+<tr class="suject">
+<td>标题</td>
+<td><input type="text" name="title"  /> </td>
+</tr>
+<tr class="body">
+<td>邮件内容</td>
+<td>
+
+<textarea id="editor_id" name="mail_body"  style="width:700px;height:300px;"></textarea>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<input type="submit" value="提交"  />
+</td>
+</tr>
+</tbody>
+</form>
+</table>
+
+
+
+<script charset="utf-8" src="/public/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="/public/kindeditor/lang/zh_CN.js"></script>
+<script>
+KindEditor.ready(function(K) {
+   window.editor = K.create('#editor_id');
+});
+
+function geteditor(){
+	html = editor.html();
+	$('#editor_id').html(html);
+	
+	}
+		
+
+</script>
+<body>
+</body>
+</html>

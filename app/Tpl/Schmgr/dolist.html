@@ -1,0 +1,14 @@
+
+
+
+<include file="Common:nav" />
+
+<div>
+<p> 共有{$count}个</p>
+<volist name="dlist" id="vo">
+ {$vo.id}-----<a href="http://{$vo.domain}" target="_blank" >{$vo.domain}</a> <br/>
+</volist>
+
+</div>
+</body>
+</html>

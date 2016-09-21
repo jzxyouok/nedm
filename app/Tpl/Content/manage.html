@@ -1,0 +1,30 @@
+
+<include file="Common:nav" />
+
+
+
+<div class="addemail">
+<table>
+<tbody>
+<tr><td>序号</td> <td> 标题邮件地址 </td> <td>管理</td> </tr>
+<volist name="list" id="vo">
+<tr> <td> {$vo.id} </td> <td> {$vo.subject} </td><td> <a href="edit/id/{$vo.id}.html">编辑</a>   <a href="javacript:void(0);" onclick="delcontent({$vo.id})"> 删除</a> </td> </tr>
+</volist>
+</tbody>
+</table>
+
+<script>
+function delcontent(id){
+
+	cfm=confirm('确认删除吗');
+	if(cfm==true){
+		url="del/id/"+id+"/html";
+		window.open(url);			
+	}
+}
+</script>
+
+<p> {$show}</p>
+</div>
+</body>
+</html>
