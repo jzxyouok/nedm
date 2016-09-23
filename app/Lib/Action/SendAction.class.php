@@ -1,5 +1,16 @@
 <?php
 class SendAction extends Action {
+	public function __construct() {
+		// 调用父类的构造方法
+		parent::__construct ();
+		// 验证是否登录
+		if (! $_SESSION ['username']) {
+			$this->error ( '您尚未登录, 请登录后操作！', '/Login/index.html' );
+		}
+	
+	}
+	
+	
 	public function send() {
 		import('ORG.Net.Smtp');//引入邮件发送类库
 		$smtp = new Smtp();
@@ -18,7 +29,12 @@ class SendAction extends Action {
 		 */
 		$BodyNum=rand(1,$TotalNum);
 		$bodyarr=$MailContent->field('body')->find($BodyNum);
-		$body=$bodyarr['body'];
+		
+		//处理email, 使之能放入伪静态处理过的url最终代码
+		$femail= str_replace('.', 'dot',str_replace('@', 'attt', $to));;
+		$tracking='<p><img alt="'.$to.'" src=" http://www.nedm.com/Emgr/gopen/email/'.$f.'.html" width="2px" height="2px" ></img></p>';
+		//把追踪代码放入邮件的模块当中
+		$body=$bodyarr['body'].$tracking;
 		
 		/*
 		 * 随机生成字数, 在总数范围内

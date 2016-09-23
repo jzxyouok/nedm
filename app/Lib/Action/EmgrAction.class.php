@@ -2,6 +2,17 @@
 
 // 邮件列表管理,显示数据与更新
 class EmgrAction extends Action {
+	
+	public function __construct() {
+		// 调用父类的构造方法
+		parent::__construct ();
+		// 验证是否登录
+		if (! $_SESSION ['username']) {
+			$this->error ( '您尚未登录, 请登录后操作！', '/Login/index.html' );
+		}
+		
+	}
+	
 	// 用于数据提交的表单门, 公共视图
 	public function index() {
 		$this->display ();
@@ -36,14 +47,14 @@ class EmgrAction extends Action {
 	
 	// 提交退订邮箱
 	public function unscribe() {
-		$data ['unscribe'] = 1;
-		$this->make_change ( $data, '更新退订' );
+		$field='unscribe';
+		$this->make_change ( $field, '更新退订' );
 	}
 	
 	// 提交打开过的邮件列表
 	public function open() {
-		$data ['opcount'] = 1;
-		$this->make_change ( $data, '更新打开' );
+		$field='unscribe';
+		$this->make_change ( $field, '更新打开' );
 	}
 	
 	// 更新回复过的邮箱
@@ -85,44 +96,79 @@ class EmgrAction extends Action {
 		$this->showall ( $condition, '反弹退信列表' );
 	}
 	
+	//查看所有打开过的邮箱
+	public function show_opcount() {
+		$condition = 'opcount>0';
+		$this->showall ( $condition, '邮件打开列表' );
+	}
+	
 	// 获取符合条件的邮件列表
 	public function getemailist() {
-		$countsend = $this->_post ( 'countsend' );
-		$countop = $this->_post ( 'countop' );
-		$reply = $this->_post ( 'reply' );
-		$limit = $this->_post ( 'limit' );
+		$countsend =intval( $this->_post ( 'countsend' ));
+		$countop =intval( $this->_post ( 'countop' ));
+		$reply = intval($this->_post ( 'reply' ));
+		$limit = intval($this->_post ( 'limit' ));
 		
 		$Eul = M ( 'edm_email_list' );
-		$condition = 'send_count=' . $countsend . ' and opcount>=' . $countop . '  and reply=' . $reply . ' and unscribe=0 and reject=0 and auto_reply=0';
+		$condition['send_count']=$countsend;
+		$condition['opcount']=array('egt',$countop);
+		$condition['reply']=$reply;
+		$condition['unscribe']=0;
+		$condition['reject']=0;
+		$condition['auto_reply']=0;
+		
 		$row = $Eul->limit ( $limit )->field ( 'email' )->where ( $condition )->select ();
 		$emails = '';
 		foreach ( $row as $email ) {
 			$emails = $emails . $email ['email'] . ',';
 		}
 		
-		// echo $emails;
+		
 		$this->ajaxReturn ( $emails, 'JSON' );
+// 		$this->emails=$emails;
+// 		$this->display();
+	}
+	
+	
+	public function gopen(){
+		$oemail=trim($this->_get('email'));
+		$email=str_replace('dot', '.',str_replace('attt', '@', $oemail));
+		$EDM = M ( 'edm_email_list' );
+		$condition['email']=$email;
+		$EDM->where($condition)->setInc('opcount',1);
+		$data['open_ip']=get_client_ip();
+		$data['op_time']=time();
+		$EDM->where($condition)->save($data);
+		
+
 	}
 	
 	// 私用方法, 用户处理提交数据并显示公用的数据提交视图
-	private function make_change($data, $title) {
+	private function make_change($field, $title) {
 		if (IS_POST) {
 			header ( "Content-type:text/html;charset=utf-8" );
-			$data ['send_count'] = 1;
-			$data ['send_success'] = 1;
 			$edmlist = M ( 'edm_email_list' );
 			$list = $this->_post ( 'list' );
 			$emails = explode ( "\n", $list );
 			foreach ( $emails as $email ) {
 				$email = trim ( $email );
 				$edata ['email'] = $email;
-				$condition = 'email="' . $email . '"';
+				$condition['email'] =$email;
 				
 				// 如果邮箱不存在则题添加到表中, 并更新发送以及传入的条件
 				if ($edmlist->add ( $edata )) {
 					echo '邮箱不存在进行添加' . $email . '<br/>';
+					$data ['send_count'] = 1;
+					$data ['send_success'] = 1;
+					$edmlist->where ( $condition )->save ( $data );
 				}
-				$edmlist->where ( $condition )->save ( $data );
+				if($edmlist->where ( $condition )->setInc($field,1)){
+					echo '成功更新邮箱' . $email . '<br/>';
+				}else{
+					$this->email=$email;
+					$this->display ();
+				}
+				
 			}
 		} else {
 			$this->title = $title;
@@ -138,7 +184,7 @@ class EmgrAction extends Action {
 		$count = $edm->where ( $condition )->count (); // 查询满足要求的总记录数
 		$Page = new Page ( $count, 20 ); // 实例化分页类 传入总记录数和每页显示的记录数
 		$show = $Page->show (); // 分页显示输出
-		$list = $edm->where ( $condition )->limit ( $Page->firstRow . ',' . $Page->listRows )->order ( 'id desc' )->select ();
+		$list = $edm->where ( $condition )->limit ( $Page->firstRow . ',' . $Page->listRows )->order ( 'op_time desc, id desc' )->select ();
 		
 		$this->assign ( 'list', $list ); // 赋值数据集
 		$this->assign ( 'show', $show ); // 赋值分页输出

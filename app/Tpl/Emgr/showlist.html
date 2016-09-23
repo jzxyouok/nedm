@@ -1,18 +1,38 @@
 
+<include file="Common:header" />
 <include file="Common:nav" />
 
 
 
+
 <div class="addemail">
-<table>
-<tbody>
-<tr><td>序号</td> <td>邮箱</td></tr>
-<volist name="list" id="vo">
-<tr> <td> {$vo.id} </td> <td> {$vo.email} </td></tr>
-</volist>
-</tbody>
-</table>
-<p> {$show}</p>
+	<table>
+		<tbody>
+			<tr>
+				<td>序号</td>
+				<td>邮箱</td>
+				<td>打开次数</td>
+				<td>打开时间</td>
+				<td>打开IP</td>
+			</tr>
+			<volist name="list" id="vo">
+			<tr>
+				<td>{$vo.id}</td>
+				<td>{$vo.email}</td>
+				<td>{$vo.opcount}</td>
+				<td>
+				<if condition="$vo.op_time gt 1000">
+				{$vo.op_time||date='Y-m-d H:i:s',###}</td>
+				<else/>未获取打开时间
+				</if>
+				
+				
+				<td>{$vo.open_ip}</td>
+			</tr>
+			</volist>
+		</tbody>
+	</table>
+	<p>{$show}</p>
 </div>
 </body>
 </html>

@@ -34,6 +34,7 @@ table {
 </head>
 
 <body>
+<div> <a alt='退出登录' href='/Login/logout.html'>退出登录</a> </div>
 
 	<ul>
 		<ol>
@@ -47,6 +48,7 @@ table {
 		</ol>
 		<ol>
 			<li><a href="/Emgr/showreply.html">回复列表</a></li>
+			<li><a href="/Emgr/show_opcount.html">打开</a></li>
 			<li><a href="/Emgr/showunscribe.html"> 退订列表</a></li>
 			<li><a href="/Emgr/show_reject.html"> 反弹退信列表</a></li>
 			<li><a href="/Emgr/show_auto_reply.html"> 自动回复列表</a></li>
@@ -68,6 +70,7 @@ table {
 
 	</ul>
 	<h2><?php echo ($title); ?></h2>
+
 
 <form action="__SELF__" method="post">
 <textarea name="list" cols="40" rows="15">  </textarea>

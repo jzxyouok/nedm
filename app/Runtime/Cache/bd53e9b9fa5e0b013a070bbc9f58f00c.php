@@ -34,6 +34,7 @@ table {
 </head>
 
 <body>
+<div> <a alt='退出登录' href='/Login/logout.html'>退出登录</a> </div>
 
 	<ul>
 		<ol>
@@ -47,6 +48,7 @@ table {
 		</ol>
 		<ol>
 			<li><a href="/Emgr/showreply.html">回复列表</a></li>
+			<li><a href="/Emgr/show_opcount.html">打开</a></li>
 			<li><a href="/Emgr/showunscribe.html"> 退订列表</a></li>
 			<li><a href="/Emgr/show_reject.html"> 反弹退信列表</a></li>
 			<li><a href="/Emgr/show_auto_reply.html"> 自动回复列表</a></li>
@@ -71,14 +73,31 @@ table {
 
 
 
+
 <div class="addemail">
-<table>
-<tbody>
-<tr><td>序号</td> <td>邮箱</td></tr>
-<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr> <td> <?php echo ($vo["id"]); ?> </td> <td> <?php echo ($vo["email"]); ?> </td></tr><?php endforeach; endif; else: echo "" ;endif; ?>
-</tbody>
-</table>
-<p> <?php echo ($show); ?></p>
+	<table>
+		<tbody>
+			<tr>
+				<td>序号</td>
+				<td>邮箱</td>
+				<td>打开次数</td>
+				<td>打开时间</td>
+				<td>打开IP</td>
+			</tr>
+			<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+				<td><?php echo ($vo["id"]); ?></td>
+				<td><?php echo ($vo["email"]); ?></td>
+				<td><?php echo ($vo["opcount"]); ?></td>
+				<td>
+				<?php if($vo["op_time"] > 1000): echo (date('Y-m-d H:i:s',$vo["op_time"])); ?></td>
+				<?php else: ?>未获取打开时间<?php endif; ?>
+				
+				
+				<td><?php echo ($vo["open_ip"]); ?></td>
+			</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+		</tbody>
+	</table>
+	<p><?php echo ($show); ?></p>
 </div>
 </body>
 </html>

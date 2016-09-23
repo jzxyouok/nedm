@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript" src="/app/Tpl/Common/js/nav.js"></script>
+
+<link href="/app/Tpl/Common/css/style.css" rel="stylesheet">
+	{$source}
+
+	<title>{$title}</title>
+</head>
+
+<body>
+	<div id="top_wrap">
+		<p>
+			<span >
+				<if condition="$unum gt 8">
+				你好{$username}
+				<else/><a href="/Login/index.html">请登录</a>
+				</if>
+
+
+
+			</span><span class='logout'> <a alt='退出登录'
+				href='/Login/logout.html'>退出登录</a></span>
+		</p>
+	</div>

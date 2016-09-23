@@ -33,6 +33,7 @@ table {
 </head>
 
 <body>
+<div> <a alt='退出登录' href='/Login/logout.html'>退出登录</a> </div>
 
 	<ul>
 		<ol>
@@ -46,6 +47,7 @@ table {
 		</ol>
 		<ol>
 			<li><a href="/Emgr/showreply.html">回复列表</a></li>
+			<li><a href="/Emgr/show_opcount.html">打开</a></li>
 			<li><a href="/Emgr/showunscribe.html"> 退订列表</a></li>
 			<li><a href="/Emgr/show_reject.html"> 反弹退信列表</a></li>
 			<li><a href="/Emgr/show_auto_reply.html"> 自动回复列表</a></li>
@@ -68,24 +70,33 @@ table {
 	</ul>
 	<h2><?php echo ($title); ?></h2>
 
-<!--<form action="/Emgr/getemailist.html" method="post">-->
-  <ol class="getemail">
-    <li > <span>  发送次数</span>  <input type="text" id="countsend" name='countsend' value="0" ></input> </li>
-    <li>  <span>   打开次数 </span> <input type="text" name='countop' id="countop" value="0" ></input> </li>
-    <li>  <span>  回复次数 </span>   <input type="text" name='reply' id="reply" value="0" > </input> </li>
-     <li> <span>  发送数量 </span>  <input type="text" id="limit" name='limit' value="0" ></input> </li>
-  </ol>
-  <div style="clear:both;"></div>
-  <p> <input type="submit" value="获取邮箱" onClick="getemail()" /> </p>
-<!--</form>-->
 
- <textarea id="getemail" rows="10" cols="20"> </textarea>
-   <p><input id="speed" type="text" value="3650"/>  <input type="button" value="设置发送时间" onClick="beforesend()" /> </p>
-   <p> <input type="button" value="开始发送" onclick="sendemail()"/>
- <p id="sendshow">发送顺序 </p>
- 
- <div id="sendstatus">
- 发送状态
- </div>
+<form action="/Emgr/getemailist.html" method="post">
+	<ol class="getemail">
+		<li><span> 发送次数</span> <input type="text" id="countsend"
+			name='countsend' value="0"></input></li>
+		<li><span> 打开次数 </span> <input type="text" name='countop'
+			id="countop" value="0"></input></li>
+		<li><span> 回复次数 </span> <input type="text" name='reply'
+			id="reply" value="0"> </input></li>
+		<li><span> 发送数量 </span> <input type="text" id="limit"
+			name='limit' value="0"></input></li>
+	</ol>
+	<div style="clear: both;"></div>
+	<p>
+		<input type="submit" value="获取邮箱" onClick="getemail()" />
+	</p>
+</form>
+
+<textarea id="getemail" rows="10" cols="20"> </textarea>
+<p>
+	<input id="speed" type="text" value="3650" /> <input type="button"
+		value="设置发送时间" onClick="beforesend()" />
+</p>
+<p>
+	<input type="button" value="开始发送" onclick="sendemail()" />
+<p id="sendshow">发送顺序</p>
+
+<div id="sendstatus">发送状态</div>
 </body>
 </html>
