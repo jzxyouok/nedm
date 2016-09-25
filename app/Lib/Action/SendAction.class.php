@@ -1,5 +1,5 @@
 <?php
-class SendAction extends Action {
+class SendAction extends CommonAction{
 	public function __construct() {
 		// 调用父类的构造方法
 		parent::__construct ();

@@ -1,15 +1,7 @@
 <?php
 // 添加和管理邮件模板, 并发送
-class ContentAction extends Action {
-	public function __construct() {
-		// 调用父类的构造方法
-		parent::__construct ();
-		// 验证是否登录
-		if (! $_SESSION ['username']) {
-			$this->error ( '您尚未登录, 请登录后操作！', '/Login/index.html' );
-		}
-		
-	}
+class ContentAction extends CommonAction {
+
 	public function index() {
 		$this->title = '添加模板';
 		$this->display ();

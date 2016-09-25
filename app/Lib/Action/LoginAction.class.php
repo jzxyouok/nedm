@@ -9,9 +9,9 @@ class LoginAction extends Action {
 			$User = M ( 'User' );
 			$data ['uname'] = $this->_post ( 'username' );
 			$data ['up'] = md5 ( $this->_post ( 'password' ) );
-			if ($username = $User->where ( $data )->field ( 'uname' )->find ()) {
-				session(array('name'=>'username','expire'=>3600));
-				session('username',$username);
+			if ($username = $User->where ( $data )->find ()) {
+				session('username',$username['uname']);
+				session('uid',$username['id']);
 				$this->success('登录成功','/Index');
 			} else {
 				$this->error('帐号或密码错误请重新输入');
@@ -23,6 +23,7 @@ class LoginAction extends Action {
 	
 	public function Logout(){
 		session('username',null);
+		session('uid',null);
 		$this->success('退出登录成功');
 	}
 	

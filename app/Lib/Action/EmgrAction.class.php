@@ -1,17 +1,8 @@
 <?php
 
 // 邮件列表管理,显示数据与更新
-class EmgrAction extends Action {
+class EmgrAction extends CommonAction {
 	
-	public function __construct() {
-		// 调用父类的构造方法
-		parent::__construct ();
-		// 验证是否登录
-		if (! $_SESSION ['username']) {
-			$this->error ( '您尚未登录, 请登录后操作！', '/Login/index.html' );
-		}
-		
-	}
 	
 	// 用于数据提交的表单门, 公共视图
 	public function index() {

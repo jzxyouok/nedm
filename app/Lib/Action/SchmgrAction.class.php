@@ -1,6 +1,6 @@
 <?php
 // 搜索爬虫相关的域名,关键字和镜像搜索引擎管理
-class SchmgrAction extends Action {
+class SchmgrAction extends CommonAction {
 	public function __construct() {
 		// 调用父类的构造方法
 		parent::__construct ();
