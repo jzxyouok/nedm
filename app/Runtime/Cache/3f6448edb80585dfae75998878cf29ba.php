@@ -91,7 +91,6 @@
 
 
 
-<h2><?php echo ($title); ?></h2>
 
 
 
@@ -100,5 +99,11 @@
 
 
 
+<?php echo W('Banner');?>
+
+
+    
+    
+    
 </body>
 </html>
