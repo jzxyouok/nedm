@@ -14,12 +14,12 @@ class SendAction extends CommonAction{
 	public function send() {
 		import('ORG.Net.Smtp');//引入邮件发送类库
 		$smtp = new Smtp();
+		//dump($smtp);
 		$to = $this->_post ( 'email' );//获取需要营销的邮箱
 		$send_num = $this->_post ( 'send_num' );//发送邮箱的顺序号
 		$MailContent=M('mailcontent');//实例化邮件模板对象
 		$Edm=M('edm_email_list');
 		$TotalNum=$MailContent->count();//计算模板总数
-		
 		
 		
 		/*
@@ -32,8 +32,7 @@ class SendAction extends CommonAction{
 		
 		//处理email, 使之能放入伪静态处理过的url最终代码
 		$femail= str_replace('.', 'dot',str_replace('@', 'attt', $to));
-		$ip=$_SERVER["SERVER_NAME"];
-		$tracking='<p><img alt="'.$to.'" src="http://'.$ip.'/Emgr/gopen/email/'.$femail.'.html" width="2px" height="2px" ></img></p>';
+		$tracking='<p><img alt="'.$to.'" src=" http://'.$_SERVER['SERVER_NAME'].'/Emgr/gopen/email/'.$femail.'.html" width="2px" height="2px" ></img></p>';
 		//把追踪代码放入邮件的模块当中
 		$body=$bodyarr['body'].$tracking;
 		
@@ -52,14 +51,12 @@ class SendAction extends CommonAction{
 		 *随机生成发送帐号 
 		 */
 		$AcctNum=rand(1,9);
-		$smtp_domain=C('smtp_domain');
-		$account= "sales" . $AcctNum.$smtp_domain ;
+		$account= "sales" . $AcctNum . "@".C('smtp_domain');
 		
 		$smtpaccount=C('smtp_server');//smtp帐号
 		$password=C('smtp_password');//邮箱统一密码
-		$port=C('smtp_port');//发送邮箱的SMTP端口
-	
-
+		$port=25;//发送邮箱的SMTP端口
+		//echo $password;
 		$this->postmail($to,$subject,$body,$smtpaccount,$account,$password,$port,$ContentNum);
 		echo '第'.$send_num.'封邮件';
 	}
@@ -69,7 +66,7 @@ class SendAction extends CommonAction{
 		
 		$smtpserver = $smtpaccount; // SMTP服务器
 		$smtpserverport = $port; // SMTP服务器端口		
-		$smtpusermail = "sales" . $AcctNum . "@".$smtp_domain; // SMTP服务器的用户邮箱
+		$smtpusermail = "sales" . $AcctNum . "@mooqing.com"; // SMTP服务器的用户邮箱
 		$smtpemailto = $to; // 发送给谁
 		$smtpuser = $account; // SMTP服务器的用户帐号
 		$smtppass = $password; // SMTP服务器的用户密码
