@@ -42,7 +42,7 @@ function sendemail() {
 		send_num : snum
 
 	}, function(data, status) {
-		showdata = data.substr(-130);
+		showdata = data.substr(-190);
 		//showdata = data
 		$("#sendstatus").html(showdata);
 

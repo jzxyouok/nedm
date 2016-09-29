@@ -1,0 +1,1 @@
+<?php	return array ( 0 => 'id', 1 => 'sites', 2 => 'succeed_count', 3 => 'fail_count', '_autoinc' => true, '_pk' => 'id', '_type' => array ( 'id' => 'int(11)', 'sites' => 'varchar(255)', 'succeed_count' => 'smallint(5)', 'fail_count' => 'smallint(5)', ), );?>

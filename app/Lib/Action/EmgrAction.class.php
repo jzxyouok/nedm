@@ -179,6 +179,7 @@ class EmgrAction extends CommonAction {
 		
 		$this->assign ( 'list', $list ); // 赋值数据集
 		$this->assign ( 'show', $show ); // 赋值分页输出
+
 		$this->display ( 'showlist' );
 	}
 }
