@@ -101,9 +101,9 @@ class EmgrAction extends CommonAction {
 		$limit = intval($this->_post ( 'limit' ));
 		
 		$Eul = M ( 'edm_email_list' );
-		$condition['send_count']=$countsend;
-		$condition['opcount']=array('egt',$countop);
-		$condition['reply']=$reply;
+		$condition['send_count']=array('elt',$countsend);
+	    //$condition['opcount']=array('elt',$countop);
+		$condition['reply']=array('elt',$reply);
 		$condition['unscribe']=0;
 		$condition['reject']=0;
 		$condition['auto_reply']=0;

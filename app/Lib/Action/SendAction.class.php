@@ -32,9 +32,9 @@ class SendAction extends CommonAction{
 		
 		//处理email, 使之能放入伪静态处理过的url最终代码
 		$femail= str_replace('.', 'dot',str_replace('@', 'attt', $to));
-		$tracking='<p><img alt="'.$to.'" src=" http://'.$_SERVER['SERVER_NAME'].'/Emgr/gopen/email/'.$femail.'.html" width="2px" height="2px" ></img></p>';
+		//$tracking='<p><img alt="'.$to.'" src=" http://'.$_SERVER['SERVER_NAME'].'/Emgr/gopen/email/'.$femail.'.html" width="2px" height="2px" ></img></p>';
 		//把追踪代码放入邮件的模块当中
-		$body=$bodyarr['body'].$tracking;
+		$body=$bodyarr['body'];
 		
 		/*
 		 * 随机生成字数, 在总数范围内

@@ -6,11 +6,11 @@
 
 
 <div>
-<p> 共有{$count}个</p>
-<volist name="dlist" id="vo">
+
+<volist name="list" id="vo">
  {$vo.id}-----<a href="http://{$vo.domain}" target="_blank" >{$vo.domain}</a> <br/>
 </volist>
-
+<p>{$show}</p>
 </div>
 </body>
 </html>
