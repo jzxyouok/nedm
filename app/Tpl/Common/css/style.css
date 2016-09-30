@@ -170,3 +170,8 @@ tr {
 table {
 	border-collapse: collapse;
 }
+
+banner{
+	width:998px;
+	overflow:hidden;
+}

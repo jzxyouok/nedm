@@ -14,7 +14,7 @@ class SendAction extends CommonAction{
 	public function send() {
 		import('ORG.Net.Smtp');//引入邮件发送类库
 		$smtp = new Smtp();
-		dump($smtp);
+		//dump($smtp);
 		$to = $this->_post ( 'email' );//获取需要营销的邮箱
 		$send_num = $this->_post ( 'send_num' );//发送邮箱的顺序号
 		$MailContent=M('mailcontent');//实例化邮件模板对象
@@ -31,10 +31,10 @@ class SendAction extends CommonAction{
 		$bodyarr=$MailContent->field('body')->find($BodyNum);
 		
 		//处理email, 使之能放入伪静态处理过的url最终代码
-		$femail= str_replace('.', 'dot',str_replace('@', 'attt', $to));;
-		$tracking='<p><img alt="'.$to.'" src=" http://www.nedm.com/Emgr/gopen/email/'.$f.'.html" width="2px" height="2px" ></img></p>';
+		$femail= str_replace('.', 'dot',str_replace('@', 'attt', $to));
+		//$tracking='<p><img alt="'.$to.'" src=" http://'.$_SERVER['SERVER_NAME'].'/Emgr/gopen/email/'.$femail.'.html" width="2px" height="2px" ></img></p>';
 		//把追踪代码放入邮件的模块当中
-		$body=$bodyarr['body'].$tracking;
+		$body=$bodyarr['body'];
 		
 		/*
 		 * 随机生成字数, 在总数范围内
@@ -42,7 +42,8 @@ class SendAction extends CommonAction{
 		 * 获取随机邮件模板 标题subject 内容
 		 */
 		$subjectNum=rand(1,$TotalNum);
-		$subjectArr=$MailContent->field('body')->find($subjectNum);
+		$subjectArr=$MailContent->field('subject')->find($subjectNum);
+		$subject=$subjectArr['subject'];
 		$AcctNum=rand(1,9);
 		
 		
@@ -50,12 +51,12 @@ class SendAction extends CommonAction{
 		 *随机生成发送帐号 
 		 */
 		$AcctNum=rand(1,9);
-		$account= "sales" . $AcctNum . "@mooqing.com";
+		$account= "sales" . $AcctNum . "@".C('smtp_domain');
 		
-		$smtpaccount="mail.mooqing.com";//smtp帐号
-		$password="Olp9$%099!0S4rfd";//邮箱统一密码
+		$smtpaccount=C('smtp_server');//smtp帐号
+		$password=C('smtp_password');//邮箱统一密码
 		$port=25;//发送邮箱的SMTP端口
-	
+		//echo $password;
 		$this->postmail($to,$subject,$body,$smtpaccount,$account,$password,$port,$ContentNum);
 		echo '第'.$send_num.'封邮件';
 	}

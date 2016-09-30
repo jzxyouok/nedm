@@ -6,7 +6,6 @@ function getemail() {
 
 	$.post("/Emgr/getemailist", {
 		countsend : $("#countsend").val(),
-		countop : $("#countop").val(),
 		reply : $("#reply").val(),
 		limit : $("#limit").val()
 
@@ -42,8 +41,8 @@ function sendemail() {
 		send_num : snum
 
 	}, function(data, status) {
-		showdata = data.substr(-130);
-		//showdata = data
+		//showdata = data.substr(-190);
+		showdata = data
 		$("#sendstatus").html(showdata);
 
 	});

@@ -11,22 +11,17 @@ class CommonAction extends Action {
 	//
 	protected function uploadimg() {
 		import ( 'ORG.Net.UploadFile' );
-		$upload = new UploadFile ();
-		$upload->allowExts = array (
-				'jpg',
-				'gif',
-				'png',
-				'jpeg',
-				'bmp' 
-		); // 设置附件上传类型
-		$upload->savePath = '../Uploads/banner/'; // 不要修改
-		
-		if (! $upload->upload ()) {
-			$this->error ( $upload->getErrorMsg () );
-		} else {
+		$upload = new UploadFile (); // 实例化上传类
+		$upload->maxSize = 3145728; // 设置附件上传大小
+		$upload->allowExts = array ('jpg','gif','png','jpeg'); // 设置附件上传类型
+		$upload->savePath = './Uploads/banner/'; // 设置附件上传目录
+		if (! $upload->upload ()) { // 上传错误提示错误信息
+			$this->$upload->getErrorMsg ();
+		} else { // 上传成功 获取上传文件信息
 			$info = $upload->getUploadFileInfo ();
-			return $info;
-		}
+			return  $info;
+		}	
+	
 	}
 	
 	// 导航栏

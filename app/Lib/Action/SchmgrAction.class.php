@@ -24,22 +24,35 @@ class SchmgrAction extends CommonAction {
 	
 	//查看获取总共有多少个匹配域名
 	public function dolist() {
-		$dlist = M ( 'domain' );
-		$condition = 'title_macth=1';
-		$this->count = $dlist->where ( $condition )->count ();
-		$this->dlist = $dlist->where ( $condition )->select ();
-		$this->title = '匹配域名';
+		$db = M ( 'domain' );
+		$condition['title_macth'] =1;
+		$this->title = '匹配域名';				
+		$count = $db->where ( $condition )->count (); // 查询满足要求的总记录数
+		import ( 'ORG.Util.Page' );//引入page分页类
+		$Page = new Page ( $count, 20 ); // 实例化分页类 传入总记录数和每页显示的记录数
+		$show = $Page->show (); // 分页显示输出
+		$list = $db->where ( $condition )->limit ( $Page->firstRow . ',' . $Page->listRows )->select();
+		$this->assign ( 'list', $list ); // 赋值数据集
+		$this->assign ( 'show', $show ); // 赋值分页输出
+		
 		$this->display ();
 	}
 	
 	//查看还有多多少关键字没有被使用
 	public function un_use_keyword() {
-		$klist = M ( 'keyword' );
-		$condition = 'usecount=0';
-		$this->title = "未使用的关键字列表";
-		$this->count = $klist->where ( $condition )->count ();
-		$this->klist = $klist->where ( $condition )->select ();
-		$this->title = '可用谷歌镜列表';
+		$db = M ( 'keyword' );
+		$condition['usecount'] =0;
+		$count = $db->where ( $condition )->count (); // 查询满足要求的总记录数
+		import ( 'ORG.Util.Page' );//引入page分页类
+		$Page = new Page ( $count, 20 ); // 实例化分页类 传入总记录数和每页显示的记录数
+		$show = $Page->show (); // 分页显示输出
+		
+		$this->title = "未使用的关键字列表";		
+		$list = $db->where ( $condition )->limit ( $Page->firstRow . ',' . $Page->listRows )->select();		
+		$this->assign ( 'list', $list ); // 赋值数据集
+		$this->assign ( 'show', $show ); // 赋值分页输出
+		
+		
 		$this->display ();
 	}
 	

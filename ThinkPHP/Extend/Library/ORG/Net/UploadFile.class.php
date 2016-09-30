@@ -208,13 +208,10 @@ class UploadFile {//类定义开始
                 $isUpload   = true;
             }
         }
-        if($isUpload) {
+            //修改的
             $this->uploadFileInfo = $fileInfo;
             return true;
-        }else {
-            $this->error  =  '没有选择上传文件';
-            return false;
-        }
+ 
     }
 
     /**
